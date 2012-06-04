@@ -5015,7 +5015,7 @@ let () = match begin
 end with
   | Some ch -> close_in ch
   | None ->
-    BaseExec.run "./configure" [];
+    BaseExec.run "./configure" ["CFLAGS=-fPIC"; "LDFLAGS=-fPIC"];
     BaseExec.run "make" [];
     close_out (open_out "_built_mcl")
 
