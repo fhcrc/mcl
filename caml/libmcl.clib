@@ -1,0 +1,46 @@
+src/clew/cat.o
+src/clew/claw.o
+src/clew/clm.o
+src/clew/scan.o
+src/gryphon/path.o
+src/impala/app.o
+src/impala/compose.o
+src/impala/iface.o
+src/impala/io.o
+src/impala/ivp.o
+src/impala/matrix.o
+src/impala/pval.o
+src/impala/stream.o
+src/impala/tab.o
+src/impala/vector.o
+src/impala/version.o
+src/mcl/alg.o
+src/mcl/dpsd.o
+src/mcl/expand.o
+src/mcl/inflate.o
+src/mcl/interpret.o
+src/mcl/proc.o
+src/mcl/procinit.o
+src/mcl/shadow.o
+src/mcl/transform.o
+util/alloc.o
+util/array.o
+util/ding.o
+util/equate.o
+util/err.o
+util/gralloc.o
+util/hash.o
+util/heap.o
+util/io.o
+util/let.o
+util/list.o
+util/opt.o
+util/rand.o
+util/ting.o
+util/tok.o
+util/tr.o
+util/types.o
+# OASIS_START
+# DO NOT EDIT (digest: 678012f0e09ce331ae93eba86c48e85d)
+caml_mcl.o
+# OASIS_STOP

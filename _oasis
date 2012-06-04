@@ -1,0 +1,13 @@
+OASISFormat: 0.2
+Name:        mcl
+Version:     11-335~oasis1
+Synopsis:    Graph clustering by flow simulation
+Authors:     Stijn van Dongen
+License:     GPL-3.0
+Plugins:     META (0.2)
+
+Library mcl
+  Path: caml
+  BuildTools: ocamlbuild
+  CSources: caml_mcl.c
+  Modules: Mcl
