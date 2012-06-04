@@ -1,6 +1,6 @@
 OASISFormat: 0.2
 Name:        mcl
-Version:     11-335~oasis1
+Version:     12-068~oasis1
 Synopsis:    Graph clustering by flow simulation
 Authors:     Stijn van Dongen
 License:     GPL-3.0
