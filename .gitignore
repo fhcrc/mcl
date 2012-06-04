@@ -1,0 +1,10 @@
+*.o
+*.a
+.deps
+/config.*
+/setup.data
+/setup.log
+/stamp-h1
+Makefile
+_build
+_built_mcl
