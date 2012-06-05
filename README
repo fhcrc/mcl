@@ -1,3 +1,15 @@
+***** NOTE *****
+
+This is not in any way an official repository for MCL. This repository is for
+the sole purpose of publishing our OCaml wrappers on top of MCL. Feel free to
+use and/or contribute to them, but note that they are very specifically
+designed for our purposes.
+
+The official MCL website is: http://micans.org/mcl/
+
+*** END NOTE ***
+
+
 
    If you use MCL software in your research, cite it as you would cite a
    journal or a book. This includes papers published in regular or electronic
