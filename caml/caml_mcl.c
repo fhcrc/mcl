@@ -7,6 +7,9 @@
 #include "caml/alloc.h"
 #include "caml/custom.h"
 
+#define Val_none Val_int(0)
+#define Some_val(v) Field(v,0)
+
 static int caml_mcl_initialized = 0;
 
 void caml_mcl_initialize(void)
@@ -19,9 +22,9 @@ void caml_mcl_initialize(void)
     caml_mcl_initialized = 1;
 }
 
-CAMLprim value caml_mcl(value arr)
+CAMLprim value caml_mcl(value inflation, value arr)
 {
-    CAMLparam1(arr);
+    CAMLparam2(inflation, arr);
     int i, cols = Wosize_val(arr);
     mclv *domc = mclvCanonical(NULL, cols, 1.0);
     mclv *domr = mclvCanonical(NULL, cols, 1.0);
@@ -46,6 +49,12 @@ CAMLprim value caml_mcl(value arr)
 
 
     mclAlgInterface(&mlp, NULL, 0, NULL, mx, 0);
+
+    /* Optionally set inflation */
+    if (inflation != Val_none) {
+        mlp->mpp->mainInflation = Double_val(Some_val(inflation));
+    }
+
     mclAlgorithm(mlp);
 
     res_mat = mlp->cl_result;
