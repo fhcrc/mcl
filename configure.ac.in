@@ -175,7 +175,6 @@ AC_CHECK_VA_COPY
 AC_OUTPUT([
     Makefile
     include/Makefile
-    doc/Makefile
     testing/Makefile
     testing/stream/Makefile
     testing/blast/Makefile
