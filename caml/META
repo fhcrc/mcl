@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: e5eb51d56f55890f6c6942167ad1e3cd)
-version = "12-068~oasis2"
+# DO NOT EDIT (digest: 5f721e4bed5e877d5d7ced904ae75621)
+version = "12-068~oasis3"
 description = "Graph clustering by flow simulation"
 archive(byte) = "mcl.cma"
 archive(byte, plugin) = "mcl.cma"
