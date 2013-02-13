@@ -1,6 +1,6 @@
 true: precious
 # OASIS_START
-# DO NOT EDIT (digest: ec4b4ee6c909925521ddf969e9b92d42)
+# DO NOT EDIT (digest: 52287364fc09c4a95ac54685a60c2c73)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -15,6 +15,8 @@ true: precious
 "_darcs": -traverse
 "_darcs": not_hygienic
 # Library mcl
-"caml": include
-<caml/mcl.{cma,cmxa}>: use_libmcl
+"caml/mcl.cmxs": use_mcl
+<caml/*.ml{,i}>: oasis_library_mcl_ccopt
+"caml/caml_mcl.c": oasis_library_mcl_ccopt
+<caml/mcl.{cma,cmxa}>: use_libmcl_stubs
 # OASIS_STOP

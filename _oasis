@@ -1,13 +1,17 @@
-OASISFormat: 0.2
-Name:        mcl
-Version:     12-068~oasis2
-Synopsis:    Graph clustering by flow simulation
-Authors:     Stijn van Dongen
-License:     GPL-3.0
-Plugins:     META (0.2)
+OASISFormat:     0.3
+Name:            mcl
+Version:         12-068~oasis3
+Synopsis:        Graph clustering by flow simulation
+Authors:         Stijn van Dongen
+License:         GPL-3.0
+Plugins:         META (0.3)
+PreConfCommand:  ./configure CFLAGS=-fPIC LDFLAGS=-fPIC
+PreBuildCommand: make
+PreCleanCommand: make clean
 
 Library mcl
   Path: caml
   BuildTools: ocamlbuild
   CSources: caml_mcl.c
+  CCOpt: -fPIC
   Modules: Mcl
