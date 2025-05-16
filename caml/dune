@@ -1,0 +1,10 @@
+(library
+ (public_name mcl)
+ (wrapped false)
+ (foreign_stubs
+  (language c)
+  (flags :standard -I .. -I ../src)
+  (include_dirs ../src/impala ../util ../src/mcl)
+  (names caml_mcl))
+ (no_dynlink)
+ (foreign_archives ../src/mcl/mcl ../util/util  ../src/impala/impala ../src/clew/clew))

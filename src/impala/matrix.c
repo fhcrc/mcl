@@ -257,7 +257,7 @@ mcxstatus  mclxMapRows
       {  mclIvp* rowivp    =  vec->ivps
       ;  mclIvp* rowivpmax =  rowivp + vec->n_ivps
       ;  ofs offset = -1
-      
+
       ;  while (rowivp < rowivpmax)
          {  offset  =   canonical
                      ?  rowivp->idx
@@ -279,7 +279,7 @@ mcxstatus  mclxMapRows
          mclvSort(vec, mclpIdxCmp)
       ;  vec++
    ;  }
-      
+
       mclvFree(&(mx->dom_rows))
    ;  mclpARfree(&ar_dom)
    ;  mx->dom_rows = new_dom_rows
@@ -352,7 +352,7 @@ mclx* mclxAllocZero
    ;  }
 
       n_cols  = dom_cols->n_ivps
-   
+
    ;  dst = mcxAlloc(sizeof(mclx), EXIT_ON_FAIL)
    ;  dst->cols = mcxAlloc (n_cols * sizeof(mclv), EXIT_ON_FAIL)
 
@@ -507,8 +507,8 @@ mclx*  mclxSub
 
    ;  if (meet_the_joneses(sub, mx, new_dom_cols, new_dom_rows))
       mclxFree(&sub)
-                  /* noteme dangersign recentchange; 
-                   * previously we called 
+                  /* noteme dangersign recentchange;
+                   * previously we called
                meet_the_joneses(sub, mx, col_select, row_select)
                    * but if !col_select the sub argument would have
                    * new_dom_cols equal to empty vector;
@@ -648,7 +648,7 @@ void mclxFree
 
 void mclxMakeStochastic
 (  mclx* mx
-)  
+)
    {  mclv* vecPtr    =  mx->cols
    ;  mclv* vecPtrMax =  vecPtr + N_COLS(mx)
 
@@ -666,7 +666,7 @@ mclv* mclxColSelect
 )
    {  mclv*  sel = mclvClone(m->dom_cols)
    ;  dim i =  0
-   
+
    ;  while (i < N_COLS(m))
       {  sel->ivps[i].val = f_cb(m->cols + i, arg_cb)
       ;  i++
@@ -1176,7 +1176,7 @@ mclx* mclxBinary
                                  ,  NULL
                                  )
    ;  mclx*  m3          =  mclxAllocZero(dom_cols, dom_rows)
-   ;  mclv  *dstvec      =  m3->cols 
+   ;  mclv  *dstvec      =  m3->cols
    ;  mclv  *m1vec       =  m1->cols
    ;  mclv  *m2vec       =  m2->cols
    ;  mclv  empvec
@@ -1471,7 +1471,7 @@ mclx* mclxTranspose
 
 mclv* mclxRowSizes
 (  const mclx* m
-,  mcxenum mode  
+,  mcxenum mode
 )
    {  mclv* res = mclvClone(m->dom_rows)
    ;  dim i, j, n_err = 0
@@ -1503,7 +1503,7 @@ mclv* mclxColNums
 )
    {  mclv*  nums = mclvClone(m->dom_cols)
    ;  dim i =  0
-   
+
    ;  if (nums)
       {  while (i < N_COLS(m))
          {  nums->ivps[i].val = f_cb(m->cols + i)
@@ -1519,7 +1519,7 @@ mclv* mclxColNums
 
 mclv* mclxDiagValues
 (  const mclx*  m
-,  mcxenum     mode  
+,  mcxenum     mode
 )
    {  return mclxColNums(m, mclvSelf, mode)
 ;  }
@@ -1527,7 +1527,7 @@ mclv* mclxDiagValues
 
 mclv* mclxColSums
 (  const mclx*  m
-,  mcxenum     mode  
+,  mcxenum     mode
 )
    {  return mclxColNums(m, mclvSum, mode)
 ;  }
@@ -1569,7 +1569,7 @@ void  mclxColumnsRealign
 
 double mclxMaxValue
 (  const mclx*        mx
-) 
+)
    {  double max_val  =  0.0
    ;  mclxUnary((mclx*)mx, fltxPropagateMax, &max_val)
    ;  return max_val
@@ -1578,14 +1578,14 @@ double mclxMaxValue
 
 mclx* mclxIdentity
 (  mclv* vec
-)  
+)
    {  return mclxConstDiag(vec, 1.0)
 ;  }
 
 
 void mclxMakeCharacteristic
 (  mclx*              mx
-)  
+)
    {  double one  =  1.0
    ;  mclxUnary(mx, fltxConst, &one)
 ;  }
@@ -1594,7 +1594,7 @@ void mclxMakeCharacteristic
 mclx* mclxMax
 (  const mclx*        m1
 ,  const mclx*        m2
-)  
+)
    {  return mclxBinary(m1, m2, fltMax)
 ;  }
 
@@ -1602,7 +1602,7 @@ mclx* mclxMax
 mclx* mclxMinus
 (  const mclx*        m1
 ,  const mclx*        m2
-)  
+)
    {  return mclxBinary(m1, m2, fltSubtract)
 ;  }
 
@@ -1610,7 +1610,7 @@ mclx* mclxMinus
 mclx* mclxAdd
 (  const mclx*        m1
 ,  const mclx*        m2
-)  
+)
    {  return mclxBinary(m1, m2, fltAdd)
 ;  }
 
@@ -1843,18 +1843,18 @@ dim mclxUnaryList
 mclv* mclgUnionv
 (  mclx* mx
 ,  const mclv* coldom
-,  const mclv* restrict
+,  const mclv* restrict_
 ,  mcxenum scratch_STATUS
 ,  mclv* dst
 )
-   {  return mclgUnionv2(mx, coldom, restrict, scratch_STATUS, dst, mx->dom_rows)
+   {  return mclgUnionv2(mx, coldom, restrict_, scratch_STATUS, dst, mx->dom_rows)
 ;  }
 
 
 mclv* mclgUnionv2
 (  const mclx* mx
 ,  const mclv* coldom
-,  const mclv* restrict
+,  const mclv* restrict_
 ,  mcxenum scratch_STATUS
 ,  mclv* dst
 ,  mclv* scratch
@@ -1877,7 +1877,7 @@ mclv* mclgUnionv2
       row_scratch = mclvClone(scratch)
    ;  else
       row_scratch = scratch
-      
+
    ;  if (scratch_STATUS != SCRATCH_READY && scratch_STATUS != SCRATCH_UPDATE)
       mclvMakeCharacteristic(row_scratch)
 
@@ -1899,8 +1899,8 @@ mclv* mclgUnionv2
                )
                continue               /* SNH if coldom is subset of mx->dom_cols */
             ;  if
-               (  restrict
-               && 0 > (o_restrict = mclvGetIvpOffset(restrict, idx, o_restrict))
+               (  restrict_
+               && 0 > (o_restrict = mclvGetIvpOffset(restrict_, idx, o_restrict))
                )
                continue               /* not found in restriction domain */
 
@@ -2194,7 +2194,7 @@ void  mclxPerturb
          {  mclp* p = v->ivps+j
          ;  double perturb, fraction = 0.0
          ;  mclv* w = NULL
-         
+
          ;  if (symmetric && p->idx >= v->vid)
             break
          ;  w = mclxGetVector(mx, p->idx, RETURN_ON_FAIL, NULL)
@@ -2256,12 +2256,12 @@ void mclxFold
 )
    {  dim i, n_meet
    ;  mclv* uniondup = mclgUnionv(dup, NULL, NULL, SCRATCH_READY, NULL)
-   
+
    ;  if (!mclxIsGraph(mx))
       {  mcxErr("mclxFold", "not folding, domains not equal")
       ;  return
    ;  }
-   
+
       for (i=0;i<N_COLS(dup);i++)
       {  mclv* ls = dup->cols+i
       ;  mclv* dst = mclxGetVector(mx, ls->vid, RETURN_ON_FAIL, NULL)
@@ -2286,6 +2286,3 @@ void mclxFold
    ;  mclxMergeTranspose(mx, fltMax, 1.0)
    ;  mclvFree(&uniondup)
 ;  }
-
-
-

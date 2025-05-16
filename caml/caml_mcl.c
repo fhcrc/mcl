@@ -8,7 +8,6 @@
 #include "caml/custom.h"
 
 #define Val_none Val_int(0)
-#define Some_val(v) Field(v,0)
 
 static int caml_mcl_initialized = 0;
 
