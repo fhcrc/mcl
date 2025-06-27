@@ -1,0 +1,12 @@
+ opam-version: "2.0"
+name: "mcl"
+version: "dev"
+synopsis: "OCaml MCL bindings"
+maintainer: "mccoy@fhcrc.org"
+depends: ["ocaml" "ocamlfind" "dune" {>= "2.0"}]
+build: [
+  ["./configure"]
+  ["make" "-j" jobs]
+  ["dune" "build" "-p" name "-j" jobs]
+]
+
