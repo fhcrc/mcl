@@ -41,7 +41,7 @@ void doBool(const char *string, mclProcParam* mp);
 int  doInfoFlag(const char *string, mclProcParam* mp);
 int  flagWithArg(const int a, const char *string);
 void toggle(int* i, const char* s);
-void usage();
+void usage(const char **);
 
 
 #endif
