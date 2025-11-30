@@ -33,6 +33,7 @@
 #include "impala/matrix.h"
 #include "impala/tab.h"
 #include "impala/stream.h"
+#include "impala/app.h"
 
 #include "gryphon/path.h"
 
